@@ -1,5 +1,5 @@
 
-# For loops Lab
+# Python For loops Lab
 
 ### Learning Objectives
 
@@ -8,7 +8,7 @@
 
 ### Picking up where we last left off
 
-In the last lesson, we plotted some of our travel data.
+In the last lesson, we worked with some of our travel data.  Let's retrieve a list with our travel information again from excel.  First, we read the information from excel as a list of dictionaries, with each dictionary representing a location.  And we assign this list to the variable `cities`.
 
 
 ```python
@@ -17,6 +17,8 @@ file_name = './cities.xlsx'
 travel_df = pandas.read_excel(file_name)
 cities = travel_df.to_dict('records')
 ```
+
+Next, we retrieve the first three city names, stored as the `'City'` attribute of each dictionary, and `'Population'` of each of the cities.  Then we plot the names as our `x_values` and the populations as our `y_values`.
 
 
 ```python
@@ -30,48 +32,49 @@ trace_first_three_pops = {'x': x_values, 'y': y_values, 'type': 'bar'}
 plotly.offline.iplot([trace_first_three_pops])
 ```
 
-
-<script>requirejs.config({paths: { 'plotly': ['https://cdn.plot.ly/plotly-latest.min']},});if(!window.Plotly) {{require(['plotly'],function(plotly) {window.Plotly=plotly;});}}</script>
-
+Of course, as you may have spotted, there is a good amount of repetition in displaying this data.  Just take a look at how we retrieved the data for our `x_values` and `y_values`.  
 
 
-<div id="8923027b-3a3c-4a34-b486-6978ab1ade64" style="height: 525px; width: 100%;" class="plotly-graph-div"></div><script type="text/javascript">require(["plotly"], function(Plotly) { window.PLOTLYENV=window.PLOTLYENV || {};window.PLOTLYENV.BASE_URL="https://plot.ly";Plotly.newPlot("8923027b-3a3c-4a34-b486-6978ab1ade64", [{"x": ["Solta", "Greenville", "Buenos Aires"], "y": [1700, 84554, 13591863], "type": "bar"}], {}, {"showLink": true, "linkText": "Export to plot.ly"})});</script>
+```python
+x_values = [cities[0]['City'], cities[1]['City'], cities[2]['City']]
+y_values = [cities[0]['Population'], cities[1]['Population'], cities[2]['Population']]
+```
 
+So in this lesson, we will use our `for` loop to display information about our travel locations with less repetition.
 
-In this lesson, we will use our `for` loop to display information about our travel locations.
-
-### Learning Objectives
-
-### Introduction to the For Loop
+### Working with the For Loop
 
 Our `cities` list contains information about the top 12 cities.  For our upcoming iteration tasks, it will be useful to have a list of the numbers 0 through 11.  Use what we know about `len` and `range`to generate a list of numbers 1 through 11.  Assign this to a variable called `city_indices`.
 
 
 ```python
-city_indices = list(range(0, len(cities)))
+city_indices = None
 city_indices # [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
 ```
 
-
-
-
-    [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
-
-
-
-Now we want to create labels for each of the cities. We'll provide a list of the `citie_names` for you. 
+Now we want to create labels for each of the cities. We'll provide a list of the `city_names` for you. 
 
 
 ```python
-city_names = ['Solta', 'Greenville', 'Buenos Aires', 'Los Cabos', 'Walla Walla Valley', 'Marakesh', 
-              'Albuquerque', 'Archipelago Sea', 'Iguazu Falls', 'Salina Island', 'Toronto', 'Pyeongchang']
+city_names = ['Buenos Aires',
+ 'Toronto',
+ 'Pyeongchang',
+ 'Marakesh',
+ 'Albuquerque',
+ 'Los Cabos',
+ 'Greenville',
+ 'Archipelago Sea',
+ 'Walla Walla Valley',
+ 'Salina Island',
+ 'Solta',
+ 'Iguazu Falls']
 ```
 
-Your task is to assign the variable `names_and_ranks` equal to a list, with each element equal to the city name and it's corresponding rank.  For example, the first element would be, `"1. Solta"` and the second would be `"2. Greenville"`.  Use a `for` loop, `city_indices` and `city_names` to accomplish this.
+Your task is to assign the variable `names_and_ranks` equal to a list, with each element equal to the city name and it's corresponding rank.  For example, the first element would be, `"1. Buenos Aires"` and the second would be `"2. Toronto"`.  Use a `for` loop, `city_indices` and `city_names` to accomplish this.
 
 
 ```python
-names_and_ranks = ['change this'] # make sure the list is empty
+names_and_ranks = ['change this to different elements'] # make sure the list is empty
 ```
 
 
@@ -83,7 +86,7 @@ names_and_ranks[-1] # '12. Pyeongchang'
 
 
 
-    'change this'
+    'change this to different elements'
 
 
 
@@ -96,7 +99,9 @@ city_populations = []
 
 
 ```python
-city_populations
+city_populations[0] # 1700
+city_populations[1] # 84554
+city_populations[-1] # 2581000
 ```
 
 Great! Now we can begin to plot this data.  First, let's create a trace of our populations and set it to the variable `trace_populations`.
@@ -130,15 +135,6 @@ trace_areas = {'x': names_and_ranks, 'y': city_areas, 'text': names_and_ranks, '
 import plotly
 plotly.offline.init_notebook_mode(connected=True)
 plotly.offline.iplot([trace_populations, trace_areas])
-```
-
-Ok, let's just plot the middle areas separately now.
-
-
-```python
-import plotly
-plotly.offline.init_notebook_mode(connected=True)
-plotly.offline.iplot([middle_trace_areas])
 ```
 
 ### Summary
