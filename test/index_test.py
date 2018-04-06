@@ -10,7 +10,6 @@ class TestPythonLoops(unittest.TestCase):
         self.assertEqual(names_and_ranks[1], '2. Toronto')
         self.assertEqual(names_and_ranks[-1], '12. Iguazu Falls')
 
-
     def test_city_populations(self):
         self.assertItemsEqual(city_populations, [1700, 84554, 13591863, 287651, 32237, 928850, 559277, 60000, 0, 4000, 630, 2581000])
 
