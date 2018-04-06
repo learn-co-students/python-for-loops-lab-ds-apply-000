@@ -93,9 +93,9 @@ city_populations = []
 
 
 ```python
-city_populations[0] # 1700
-city_populations[1] # 84554
-city_populations[-1] # 2581000
+city_populations[0] # 2891000
+city_populations[1] # 2800000
+city_populations[-1] # 0
 ```
 
 Great! Now we can begin to plot this data.  First, let's create a trace of our populations and set it to the variable `trace_populations`.
