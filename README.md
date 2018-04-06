@@ -70,7 +70,7 @@ city_names = ['Buenos Aires',
  'Iguazu Falls']
 ```
 
-Your task is to assign the variable `names_and_ranks` equal to a list, with each element equal to the city name and it's corresponding rank.  For example, the first element would be, `"1. Buenos Aires"` and the second would be `"2. Toronto"`.  Use a `for` loop, `city_indices` and `city_names` to accomplish this.
+Your task is to assign the variable `names_and_ranks` to a list, with each element equal to the city name and it's corresponding rank.  For example, the first element would be, `"1. Buenos Aires"` and the second would be `"2. Toronto"`.  Use a `for` loop and the lists `city_indices` and `city_names` to accomplish this.
 
 
 ```python
@@ -79,16 +79,10 @@ names_and_ranks = ['change this to different elements'] # make sure the list is 
 
 
 ```python
-names_and_ranks[0] # '1. Solta'
-names_and_ranks[-1] # '12. Pyeongchang'
+names_and_ranks[0] # '1. Buenos Aires'
+names_and_ranks[1] # '2. Toronto'
+names_and_ranks[-1] # '12. Iguazu Falls'
 ```
-
-
-
-
-    'change this to different elements'
-
-
 
 Ok, now let's create a new variable called `city_populations`.  Use a `for` loop to iterate through `cities` and have `city_populations` equal to each of the populations.
 
@@ -108,7 +102,11 @@ Great! Now we can begin to plot this data.  First, let's create a trace of our p
 
 
 ```python
-trace_populations = {'x': names_and_ranks, 'y': city_populations, 'text': names_and_ranks, 'type': 'bar', 'name': 'populations'}
+trace_populations = {'x': names_and_ranks, 
+                     'y': city_populations, 
+                     'text': names_and_ranks, 
+                     'type': 'bar', 
+                     'name': 'populations'}
 ```
 
 
@@ -139,4 +137,4 @@ plotly.offline.iplot([trace_populations, trace_areas])
 
 ### Summary
 
-In this section we saw how we can use `for` loops to go through elements of a list and perform the same operation on each.  With using `for` loops we were able to reduce the amount of code that we wrote and write more expressive code.
+In this section we saw how we can use `for` loops to go through elements of a list and perform the same operation on each.  By using `for` loops we were able to reduce the amount of code that we wrote and while also writing more expressive code.
