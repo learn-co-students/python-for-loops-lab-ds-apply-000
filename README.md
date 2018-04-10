@@ -37,7 +37,7 @@ plotly.offline.iplot([trace_first_three_pops])
 
 
 
-<div id="5a0dfece-72fe-41f5-882b-df6835c00ed9" style="height: 525px; width: 100%;" class="plotly-graph-div"></div><script type="text/javascript">require(["plotly"], function(Plotly) { window.PLOTLYENV=window.PLOTLYENV || {};window.PLOTLYENV.BASE_URL="https://plot.ly";Plotly.newPlot("5a0dfece-72fe-41f5-882b-df6835c00ed9", [{"x": ["Buenos Aires", "Toronto", "Pyeongchang"], "y": [2891000, 2800000, 2581000], "type": "bar"}], {}, {"showLink": true, "linkText": "Export to plot.ly"})});</script>
+<div id="ae786799-c701-45e9-b2b1-3afa1e823b7d" style="height: 525px; width: 100%;" class="plotly-graph-div"></div><script type="text/javascript">require(["plotly"], function(Plotly) { window.PLOTLYENV=window.PLOTLYENV || {};window.PLOTLYENV.BASE_URL="https://plot.ly";Plotly.newPlot("ae786799-c701-45e9-b2b1-3afa1e823b7d", [{"x": ["Buenos Aires", "Toronto", "Pyeongchang"], "y": [2891000, 2800000, 2581000], "type": "bar"}], {}, {"showLink": true, "linkText": "Export to plot.ly"})});</script>
 
 
 Of course, as you may have spotted, there is a good amount of repetition in displaying this data.  Just take a look at how we retrieved the data for our `x_values` and `y_values`.  
@@ -118,16 +118,14 @@ names_and_ranks
 
 
 ```python
-names_and_ranks[0] # '1. Buenos Aires'
-names_and_ranks[1] # '2. Toronto'
-names_and_ranks[-1] # '12. Iguazu Falls'
+print(names_and_ranks[0]) # '1. Buenos Aires'
+print(names_and_ranks[1]) # '2. Toronto'
+print(names_and_ranks[-1]) # '12. Iguazu Falls'
 ```
 
-
-
-
-    '12. Iguazu Falls'
-
+    1. Buenos Aires
+    2. Toronto
+    12. Iguazu Falls
 
 
 Ok, now let's create a new variable called `city_populations`.  Use a `for` loop to iterate through `cities` and have `city_populations` equal to each of the populations.
@@ -160,16 +158,14 @@ city_populations
 
 
 ```python
-city_populations[0] # 2891000
-city_populations[1] # 2800000
-city_populations[-1] # 0
+print(city_populations[0]) # 2891000
+print(city_populations[1]) # 2800000
+print(city_populations[-1])# 0
 ```
 
-
-
-
+    2891000
+    2800000
     0
-
 
 
 Great! Now we can begin to plot this data.  First, let's create a trace of our populations and set it to the variable `trace_populations`.
@@ -195,7 +191,7 @@ plotly.offline.iplot([trace_populations])
 
 
 
-<div id="e30b86e3-6735-4725-bb5d-c9e5fea566ce" style="height: 525px; width: 100%;" class="plotly-graph-div"></div><script type="text/javascript">require(["plotly"], function(Plotly) { window.PLOTLYENV=window.PLOTLYENV || {};window.PLOTLYENV.BASE_URL="https://plot.ly";Plotly.newPlot("e30b86e3-6735-4725-bb5d-c9e5fea566ce", [{"x": ["1. Buenos Aires", "2. Toronto", "3. Pyeongchang", "4. Marakesh", "5. Albuquerque", "6. Los Cabos", "7. Greenville", "8. Archipelago Sea", "9. Walla Walla Valley", "10. Salina Island", "11. Solta", "12. Iguazu Falls"], "y": [2891000, 2800000, 2581000, 928850, 559277, 287651, 84554, 60000, 32237, 4000, 1700, 0], "text": ["1. Buenos Aires", "2. Toronto", "3. Pyeongchang", "4. Marakesh", "5. Albuquerque", "6. Los Cabos", "7. Greenville", "8. Archipelago Sea", "9. Walla Walla Valley", "10. Salina Island", "11. Solta", "12. Iguazu Falls"], "type": "bar", "name": "populations"}], {}, {"showLink": true, "linkText": "Export to plot.ly"})});</script>
+<div id="91923238-183d-4ff0-8886-2ee4f06e4d2e" style="height: 525px; width: 100%;" class="plotly-graph-div"></div><script type="text/javascript">require(["plotly"], function(Plotly) { window.PLOTLYENV=window.PLOTLYENV || {};window.PLOTLYENV.BASE_URL="https://plot.ly";Plotly.newPlot("91923238-183d-4ff0-8886-2ee4f06e4d2e", [{"x": ["1. Buenos Aires", "2. Toronto", "3. Pyeongchang", "4. Marakesh", "5. Albuquerque", "6. Los Cabos", "7. Greenville", "8. Archipelago Sea", "9. Walla Walla Valley", "10. Salina Island", "11. Solta", "12. Iguazu Falls"], "y": [2891000, 2800000, 2581000, 928850, 559277, 287651, 84554, 60000, 32237, 4000, 1700, 0], "text": ["1. Buenos Aires", "2. Toronto", "3. Pyeongchang", "4. Marakesh", "5. Albuquerque", "6. Los Cabos", "7. Greenville", "8. Archipelago Sea", "9. Walla Walla Valley", "10. Salina Island", "11. Solta", "12. Iguazu Falls"], "type": "bar", "name": "populations"}], {}, {"showLink": true, "linkText": "Export to plot.ly"})});</script>
 
 
 Now we want declare a variable called `city_areas` that points to a list of all of the areas of the cities.  Let's use a `for` loop to iterate through our `cities` and have `city_areas` equal to each area of the city.  
@@ -232,7 +228,7 @@ plotly.offline.iplot([trace_populations, trace_areas])
 
 
 
-<div id="f3782aaa-604f-42be-91a8-b398d482e191" style="height: 525px; width: 100%;" class="plotly-graph-div"></div><script type="text/javascript">require(["plotly"], function(Plotly) { window.PLOTLYENV=window.PLOTLYENV || {};window.PLOTLYENV.BASE_URL="https://plot.ly";Plotly.newPlot("f3782aaa-604f-42be-91a8-b398d482e191", [{"x": ["1. Buenos Aires", "2. Toronto", "3. Pyeongchang", "4. Marakesh", "5. Albuquerque", "6. Los Cabos", "7. Greenville", "8. Archipelago Sea", "9. Walla Walla Valley", "10. Salina Island", "11. Solta", "12. Iguazu Falls"], "y": [2891000, 2800000, 2581000, 928850, 559277, 287651, 84554, 60000, 32237, 4000, 1700, 0], "text": ["1. Buenos Aires", "2. Toronto", "3. Pyeongchang", "4. Marakesh", "5. Albuquerque", "6. Los Cabos", "7. Greenville", "8. Archipelago Sea", "9. Walla Walla Valley", "10. Salina Island", "11. Solta", "12. Iguazu Falls"], "type": "bar", "name": "populations"}, {"x": ["1. Buenos Aires", "2. Toronto", "3. Pyeongchang", "4. Marakesh", "5. Albuquerque", "6. Los Cabos", "7. Greenville", "8. Archipelago Sea", "9. Walla Walla Valley", "10. Salina Island", "11. Solta", "12. Iguazu Falls"], "y": [4758, 2731571, 3194, 200, 491, 3750, 68, 8300, 33, 27, 59, 672], "text": ["1. Buenos Aires", "2. Toronto", "3. Pyeongchang", "4. Marakesh", "5. Albuquerque", "6. Los Cabos", "7. Greenville", "8. Archipelago Sea", "9. Walla Walla Valley", "10. Salina Island", "11. Solta", "12. Iguazu Falls"], "type": "bar", "name": "areas"}], {}, {"showLink": true, "linkText": "Export to plot.ly"})});</script>
+<div id="00b97493-5eae-428c-92bf-223e3b8e882b" style="height: 525px; width: 100%;" class="plotly-graph-div"></div><script type="text/javascript">require(["plotly"], function(Plotly) { window.PLOTLYENV=window.PLOTLYENV || {};window.PLOTLYENV.BASE_URL="https://plot.ly";Plotly.newPlot("00b97493-5eae-428c-92bf-223e3b8e882b", [{"x": ["1. Buenos Aires", "2. Toronto", "3. Pyeongchang", "4. Marakesh", "5. Albuquerque", "6. Los Cabos", "7. Greenville", "8. Archipelago Sea", "9. Walla Walla Valley", "10. Salina Island", "11. Solta", "12. Iguazu Falls"], "y": [2891000, 2800000, 2581000, 928850, 559277, 287651, 84554, 60000, 32237, 4000, 1700, 0], "text": ["1. Buenos Aires", "2. Toronto", "3. Pyeongchang", "4. Marakesh", "5. Albuquerque", "6. Los Cabos", "7. Greenville", "8. Archipelago Sea", "9. Walla Walla Valley", "10. Salina Island", "11. Solta", "12. Iguazu Falls"], "type": "bar", "name": "populations"}, {"x": ["1. Buenos Aires", "2. Toronto", "3. Pyeongchang", "4. Marakesh", "5. Albuquerque", "6. Los Cabos", "7. Greenville", "8. Archipelago Sea", "9. Walla Walla Valley", "10. Salina Island", "11. Solta", "12. Iguazu Falls"], "y": [4758, 2731571, 3194, 200, 491, 3750, 68, 8300, 33, 27, 59, 672], "text": ["1. Buenos Aires", "2. Toronto", "3. Pyeongchang", "4. Marakesh", "5. Albuquerque", "6. Los Cabos", "7. Greenville", "8. Archipelago Sea", "9. Walla Walla Valley", "10. Salina Island", "11. Solta", "12. Iguazu Falls"], "type": "bar", "name": "areas"}], {}, {"showLink": true, "linkText": "Export to plot.ly"})});</script>
 
 
 ### Summary
