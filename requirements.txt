@@ -1,2 +1,3 @@
 pandas
 plotly==2.2.3
+xlrd
